@@ -1,0 +1,12 @@
+extends ./layout
+block content
+    div#topMenu
+        ul
+            li
+                button(id='topmenu_button_restaurant', class='btn btn-warning btn-block btn-lg', type='button', onclick='button_restaurant()') レストラン情報編集
+            li
+                button(id='topmenu_button_dish', class='btn btn-warning btn-block btn-lg', type='button', onclick='button_dish()') 料理情報編集
+            li
+                button(id='topmenu_button_notification', class='btn btn-warning btn-block btn-lg',  type='button', onclick='button_notification()') お知らせ情報登録
+            li
+                button(id='topmenu_button_feature', class='btn btn-warning btn-block btn-lg', type='button', onclick='button_feature()') 特集登録

@@ -1,0 +1,83 @@
+extends ./layout
+block content
+  div#dishes 
+    if dishes['recordset'].length == 0
+      div.alert-danger 新規料理情報はありません
+    else
+      each dish in dishes['recordset']
+        form(class='dish_form', method="post", action="/dishes")
+          div.dish
+            input(type="hidden",name="dish_id",value="#{dish['id']}")
+            header.header.clearfix
+              div.header_font.edit_target.name #{dish['name']}
+              div.created.clearfix
+                div.createdat 登録日：#{dish['createdDate']}
+            div.images
+              ul.image_list
+                li
+                  div.thumb
+                    <img src="#{BlobServiceEndpoint}dish-images/#{dish['id']}.png">
+            div.detail
+              div.detail_record.clearfix
+                div.detail_title レストラン
+                div.edit_target.detai_value.drestaurant #{dish['rname']}
+              div.detail_record.clearfix
+                div.detail_title 区分
+                if(dish['mealtime']=='1')
+                  div.edit_target.detai_value.type ランチ
+                if(dish['mealtime']=='0')
+                  div.edit_target.detai_value.type ディナー
+              div.detail_record.clearfix
+                div.detail_title カテゴリー
+                div.edit_target.detai_value.category #{dish['category']}
+              div.detail_record.clearfix
+                div.detail_title 値段
+                div.edit_target.detai_value.price #{dish['price']}
+              div.detail_record.clearfix
+                div.detail_title 評価
+                div.edit_target.detai_value.score
+                  case dish['score']
+                    when 0
+                      img(src='#{BlobServiceEndpoint}web/score_off.png')
+                      img(src='#{BlobServiceEndpoint}web/score_off.png')
+                      img(src='#{BlobServiceEndpoint}web/score_off.png')
+                      img(src='#{BlobServiceEndpoint}web/score_off.png')
+                      img(src='#{BlobServiceEndpoint}web/score_off.png')
+                    when 1
+                      img(src='#{BlobServiceEndpoint}web/score_on.png')
+                      img(src='#{BlobServiceEndpoint}web/score_off.png')
+                      img(src='#{BlobServiceEndpoint}web/score_off.png')
+                      img(src='#{BlobServiceEndpoint}web/score_off.png')
+                      img(src='#{BlobServiceEndpoint}web/score_off.png')
+                    when 2
+                      img(src='#{BlobServiceEndpoint}web/score_on.png')
+                      img(src='#{BlobServiceEndpoint}web/score_on.png')
+                      img(src='#{BlobServiceEndpoint}web/score_off.png')
+                      img(src='#{BlobServiceEndpoint}web/score_off.png')
+                      img(src='#{BlobServiceEndpoint}web/score_off.png')
+                    when 3
+                      img(src='#{BlobServiceEndpoint}web/score_on.png')
+                      img(src='#{BlobServiceEndpoint}web/score_on.png')
+                      img(src='#{BlobServiceEndpoint}web/score_on.png')
+                      img(src='#{BlobServiceEndpoint}web/score_off.png')
+                      img(src='#{BlobServiceEndpoint}web/score_off.png')
+                    when 4
+                      img(src='#{BlobServiceEndpoint}web/score_on.png')
+                      img(src='#{BlobServiceEndpoint}web/score_on.png')
+                      img(src='#{BlobServiceEndpoint}web/score_on.png')
+                      img(src='#{BlobServiceEndpoint}web/score_on.png')
+                      img(src='#{BlobServiceEndpoint}web/score_off.png')
+                    when 5
+                      img(src='#{BlobServiceEndpoint}web/score_on.png')
+                      img(src='#{BlobServiceEndpoint}web/score_on.png')
+                      img(src='#{BlobServiceEndpoint}web/score_on.png')
+                      img(src='#{BlobServiceEndpoint}web/score_on.png')
+                      img(src='#{BlobServiceEndpoint}web/score_on.png')
+              div.detail_record.clearfix
+                div.detail_title コメント
+                div.edit_target.detai_value.comment #{dish['comment']}
+            div.dish_action
+              button(type="button",class="btn btn-warning btn-lg priorityhigh") 優先
+              button(type="button",class="btn btn-warning btn-lg prioritynormal") 普通
+              button(type="button",class="btn btn-warning btn-lg priorityhide") 非表示
+            div.dish_message

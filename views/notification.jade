@@ -1,0 +1,31 @@
+extends ./layout
+block content
+  div#notifications 
+    form(method="post", action="/notifications/confirm")
+      div.notification.newnotification
+        div.notification_record.clearfix
+          div.notification_record_title 件名
+          div.notification_record_value
+            input(type="text",class="title",value="")
+        div.notification_record.clearfix
+          div.notification_record_title 本文
+          div.notification_record_value
+            textarea(class="main text", type="text")
+        div.notification_record.clearfix
+          div.notification_record_title 掲載開始日
+          div.notification_record_value
+            input(type="text",class="datepicker period_from",value="")
+        div.notification_record.clearfix
+          div.notification_record_title 掲載終了日
+          div.notification_record_value
+            input(type="text",class="datepicker period_to",value="")
+        div.notification_record.clearfix
+          div.notification_record_title 優先度
+          div.notification_record_value
+            select(class='priority',size='3')
+              option(value='0')通常表示
+              option(value='1')優先表示
+              option(value='9')非表示
+        div.notification_action
+          button(type="button",class="btn btn-warning btn-lg createNewNotification") 新規投稿
+        div.notification_message

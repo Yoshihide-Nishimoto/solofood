@@ -1,0 +1,47 @@
+extends ./layout
+block content
+  div#feature
+    input(type="hidden",id="BlobServiceEndpoint",value="#{BlobServiceEndpoint}")
+    form(method="post", action="/feature/confirm")
+      div.feature.newnotification
+        div.feature_record.clearfix
+          div.feature_record_title 件名
+          div.feature_record_value
+            input(class="title",type="text",name="title",value="")
+        div.feature_record.clearfix
+          div.feature_record_title 本文
+          div.feature_record_value
+            textarea(class="title",type="main text",name="text",value="")
+        div.feature_record.clearfix
+          div.feature_record_title 写真
+          div.feature_record_value
+            label.fileupload
+              img(class="imgView",src="#{BlobServiceEndpoint}web/no_imge.png", alt="")
+              input(type="file",id="feature_photo",name="file",value="",style="display:none;")
+        div.feature_record.clearfix
+          div.feature_record_title 掲載開始日
+          div.feature_record_value
+            input(type="text",class="datepicker period_from",name="period_from", value="")
+        div.feature_record.clearfix
+          div.feature_record_title 掲載終了日
+          div.feature_record_value
+            input(type="text",class="datepicker period_to", name="period_to",value="")
+        div.feature_record.clearfix
+          div.feature_record_title 優先度
+          div.feature_record_value
+            select(class='priority',size='3',name='priority')
+              option(value='0')通常表示
+              option(value='1')優先表示
+              option(value='9')非表示
+        div.feature_record.clearfix
+          div.feature_record_title 料理
+          div.feature_record_value
+            div#searchbox
+              input(id="shop_search_condition",type="text")
+              button(type="button",class="btn btn-success",id="shop_search_btn") 検索
+            div#searchresult
+              ul#searchresultul.clearfix
+              p(class='alert-danger',id="nothingDish",style="display:none")
+        div.feature_action
+          button(type="button",class="btn btn-warning btn-lg createNewfeature") 新規投稿
+        div.feature_message

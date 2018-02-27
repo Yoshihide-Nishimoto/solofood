@@ -1,0 +1,438 @@
+div{
+	display: block;
+}
+
+body{
+	font-size:18px;
+}
+
+.jumbotron {
+	background-color: #EEA236;
+}
+
+.jumbotron h1{
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.jumbotron h2{
+	text-align: center;
+	color: #FFFFFF;
+}
+
+.clearfix:after{
+	content:"";
+	display: block;
+	clear:both;
+}
+
+/* topMenu */
+#topMenu{
+	width:40%;
+	margin: auto;
+}
+
+#topMenu ul{
+	list-style: none;
+	margin-top: 15px;
+	display: block;
+}
+
+#topMenu ul li{
+	margin-top: 15px;
+	display: block;
+}
+
+/* dishes */
+
+#dishes{
+	width:80%;
+	margin: auto;
+}
+
+.dish{
+	margin-bottom: 15px;
+	padding: 10px;
+	word-wrap: break-word;
+    overflow-wrap: break-word;
+    border: 4px solid #BBBBBB;
+    background-color:#FAFAFA;
+}
+
+.dish .header{
+	padding-right: 20px;
+	border-bottom: 2px solid #BBBBBB;
+	align-items: center;
+}
+
+.dish .image_list{
+	list-style: none;
+	margin-top: 15px;
+	display: block;
+	padding-left: 0;
+}
+
+.dish .image_list li{
+	display: inline;
+}
+
+.dish .image_list .thumb{
+	width:200px;
+	height:200px;
+	overflow: hidden;
+}
+
+.dish .image_list img{
+	width:200px;
+	height:auto;
+	padding-bottom: 100%;
+}
+
+.dish .name{
+	font-size:24px;
+}
+
+.dish .created{
+	float:right;
+}
+
+.dish .createdat{
+	font-size:12px;
+}
+
+.dish .createdby{
+	font-size:16px;
+}
+
+.dish .detail_record{
+	border-bottom: 2px solid #BBBBBB;
+	align-items: center;
+	margin-bottom: 5px;
+	overflow: hidden;
+}
+
+.dish .detail_title{
+	display: block;
+	float:left;
+	width:20%;
+	color:#0011cc;
+	overflow: visible;
+}
+
+.dish .detai_value{
+	display: block;
+	width:80%;
+	float: right;
+	overflow: visible;
+	margin-bottom: 4px;
+}
+
+.dish .detai_value img{
+	margin-right:2px;
+	width:30px;
+	height:30px;
+}
+
+.dish .header_font{
+	font-weight: 600;
+	overflow: hidden;
+	padding-left: 5px;
+	margin-left: -5px;
+}
+
+.dish .dish_action button{
+	margin-right:10px;
+}
+
+/* restaurants */
+
+#restaurants_unchecked{
+	width:70%;
+	margin: auto;
+}
+
+.restaurant{
+	margin-bottom: 15px;
+	padding: 10px;
+	word-wrap: break-word;
+    overflow-wrap: break-word;
+    border: 4px solid #efefef;
+}
+
+.restaurant .header{
+	padding-right: 20px;
+	border-bottom: 2px solid #efefef;
+	align-items: center;
+}
+
+.restaurant .image_list{
+	list-style: none;
+	margin-top: 15px;
+	display: block;
+	padding-left: 0;
+}
+
+.restaurant .image_list li{
+	margin-right:4px;
+	display: inline-block;
+}
+
+.restaurant .image_list .thumb{
+	width:200px;
+	height:200px;
+	overflow: hidden;
+}
+
+.restaurant .image_list img{
+	width:200px;
+	height:auto;
+	padding-bottom: 100%;
+}
+
+.restaurant .name{
+	font-size:24px;
+}
+
+.restaurant .createdat{
+	font-size:12px;
+	float:right;
+}
+
+.restaurant .detail_record{
+	border-bottom: 2px solid #efefef;
+	align-items: center;
+	margin-bottom: 5px;	
+}
+
+.restaurant .detail_title{
+	display: block;
+	float:left;
+	width:140px;
+	color:#0011cc;
+}
+
+.restaurant .detai_value{
+	display: block;
+	width:100%;
+}
+
+.restaurant input{
+	margin: 0;
+	width:100%;
+}
+
+.restaurant .header_font{
+	font-weight: 600;
+	overflow: hidden;
+	padding-left: 5px;
+	margin-left: -5px;
+}
+
+
+.restaurant .restaurant_message p{
+	margin-bottom: 0px;
+}
+
+.restaurant .restaurant_action button{
+	margin-right:10px;
+}
+
+/* notifications */
+
+#notifications{
+	width:80%;
+	margin: auto;
+}
+
+.notification{
+	margin-bottom: 15px;
+	padding: 10px;
+	word-wrap: break-word;
+    overflow-wrap: break-word;
+    border: 4px solid #efefef;
+}
+
+.newnotification{
+	margin-bottom: 15px;
+	padding: 10px;
+	word-wrap: break-word;
+    overflow-wrap: break-word;
+    border: 4px solid #ffefef;
+}
+
+.notification .notification_record{
+	border-bottom: 2px solid #efefef;
+	align-items: center;
+	margin-bottom: 5px;	
+}
+
+.notification .notification_record_title{
+	display: block;
+	float:left;
+	width:15%;
+	color:#0011cc;
+}
+
+.notification .notification_record_value{
+	display: block;
+	width:85%;
+	float: right;
+}
+
+.notification .title,textarea{
+	margin: 0;
+	width:85%;
+}
+
+.notification .notification_message p{
+	margin-bottom: 0px;
+}
+
+/* feature */
+
+#feature{
+	width:80%;
+	margin: auto;
+}
+
+.feature{
+	margin-bottom: 15px;
+	padding: 10px;
+	word-wrap: break-word;
+    overflow-wrap: break-word;
+    border: 4px solid #efefef;
+}
+
+.feature{
+	margin-bottom: 15px;
+	padding: 10px;
+	word-wrap: break-word;
+    overflow-wrap: break-word;
+    border: 4px solid #ffefef;
+}
+
+.feature .feature_record{
+	border-bottom: 2px solid #efefef;
+	align-items: center;
+	margin-bottom: 5px;	
+}
+
+.feature .feature_record_title{
+	display: block;
+	float:left;
+	width:15%;
+	color:#0011cc;
+}
+
+.feature .feature_record_value{
+	display: block;
+	width:85%;
+	float: right;
+}
+
+.feature .title,textarea{
+	margin: 0;
+	width:85%;
+}
+
+.feature .feature_message p{
+	margin-bottom: 0px;
+}
+
+.feature .fileupload{
+	width:40%;
+	height:auto;
+}
+
+.feature img.imgView{
+	width:360px;
+}
+
+.dishbox {
+	border:2px solid #EEA236;
+	width:220px;
+	background-color: #efefef;
+	overflow:hidden;
+}
+
+.dishbox.off {
+	border:2px solid #FFFFFF;
+	-moz-opacity: 0.5;
+    opacity: 0.3;
+}
+
+.dishbox div,p{
+	width:90%;
+	overflow: hidden;
+	white-space: nowrap;
+	margin:auto;
+	margin-bottom: 4px;
+}
+
+.dishbox p.name{
+	font-size: 22px;
+	height:30px;
+}
+
+.dishbox .thumb{
+	height:150px;
+}
+
+.dishbox .score{
+	height:40px;
+}
+
+.dishbox p.rname{
+	height:25px;
+}
+
+.dishbox p.category{
+	height:25px;
+}
+
+.dishbox p.price{
+	height:25px;
+}
+
+.dishbox .thumb{
+	margin-top;8px;
+	width:180px;
+	height:180px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.dishbox .thumb img{
+	margin-top: 4px;
+	box-sizing:border-box;
+	width:180px;
+	padding-bottom: 100%;
+}
+
+.dishbox .score img{
+	width:18%;
+	box-sizing:border-box;
+}
+
+.feature #searchbox{
+	width:260px;
+	padding-bottom: 4px;
+	border-bottom: 1px solid #BBBBBB;
+}
+
+.feature ul {
+	list-style: none;
+	margin-top: 5px;
+	display: block;
+	padding-left:0;
+}
+
+.feature ul li{
+	display: inline-block;
+	padding-bottom: 10px;
+	padding-right: 8px;
+	float:left;
+}
+
+.dishbox ul li img{
+}

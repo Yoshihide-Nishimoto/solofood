@@ -1,0 +1,19 @@
+doctype
+html(lang="ja")
+    head
+        meta(charset="utf-8")
+        title solofood管理者画面
+        link(rel='stylesheet', href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css")
+        link(rel='stylesheet', href="//ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css")
+        link(rel='stylesheet', href="/css/solofood.css")
+        link(rel='icon', type="image/png" href="https://solomeshi.blob.core.windows.net/web/favicon.png")
+        script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+        script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js")
+        script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js")
+        script(src="/js/solofood.js")
+    body
+        div.jumbotron
+            div.container
+                h1 ソロフード管理者画面
+                h2!= subtitle
+        block content

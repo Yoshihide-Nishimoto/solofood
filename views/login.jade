@@ -1,0 +1,24 @@
+doctype
+html(lang="ja")
+  head
+    meta(charset="utf-8")
+    title solofood管理者画面
+    link(rel='stylesheet', href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css")
+    link(rel='icon', type="image/png" href="https://solomeshi.blob.core.windows.net/web/favicon.png")
+  body
+    div.container
+      div.row
+        div.col-md-4.col-md-offset-4
+          div.panel.panel-default
+            div.panel-heading
+              h3.panel-title ログイン
+            div.panel-body
+              form(method="post", action="/login")
+                p.text-danger!=message
+                br
+                fieldset
+                  div.form-group
+                    input.form-control(type="text",placeholder="メールアドレス",name="email",autofocus)
+                  div.form-group
+                    input.form-control(type="password",placeholder="パスワード   ",name="password")
+                  input.btn.btn-success.btn-block(type="submit",name="submit",value="ログイン")

@@ -1,0 +1,49 @@
+extends ./layout
+block content
+  div#restaurants_unchecked 
+    if restaurants['recordset'].length == 0
+      div.alert-danger 新規登録店舗はありません
+    else
+      each restaurant in restaurants['recordset']
+        form(class='restaurant_form', method="post", action="/restaurants")
+          div.restaurant
+            input(type="hidden",name="restaurant_id",value="#{restaurant['id']}")
+            header.header.clearfix
+              div.header_front.edit_target.name #{restaurant['name']}
+              div.createdat 登録日：#{restaurant['createdDate']}
+            div.images
+              ul.image_list
+                li
+                  div.thumb
+                    if restaurant['outsidephotocount'] == '1'
+                      img(src="#{BlobServiceEndpoint}restaurant-images/#{restaurant['id']}_outside.png")
+                    else
+                      img(src="#{BlobServiceEndpoint}web/no_imge.png")
+                li
+                  div.thumb
+                    if restaurant['insidephotocount'] == '1'
+                      img(src="#{BlobServiceEndpoint}restaurant-images/#{restaurant['id']}_inside.png")
+                    else
+                      img(src="#{BlobServiceEndpoint}web/no_imge.png")
+            div.detail
+              div.detail_record.clearfix
+                div.detail_title 住所
+                div.edit_target.detai_value.address #{restaurant['address']}
+              div.detail_record.clearfix
+                div.detail_title 営業時間
+                div.edit_target.detai_value.openinghours #{restaurant['openingHours']}
+              div.detail_record.clearfix
+                div.detail_title 定休日
+                div.edit_target.detai_value.closingDay #{restaurant['closingDay']}
+              div.detail_record.clearfix
+                div.detail_title 緯度
+                div.edit_target.detai_value.latitude #{restaurant['latitude']}
+              div.detail_record.clearfix
+                div.detail_title 経度
+                div.edit_target.detai_value.longitude #{restaurant['longitude']}
+            div.restaurant_action
+              button.btn.btn-warning.btn-lg.restaurant_action_confirm(type='button', name='restaurant_action_confirm') 確認
+              button.btn.btn-warning.btn-lg.restaurant_action_change(type='button', name='restaurant_action_change') 変更
+
+
+
